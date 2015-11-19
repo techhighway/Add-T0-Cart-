@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+    	
+    	<!-- INHERIT VIEW TO HIDE ACTIVE BUTTON ON PRODUCT VARIANT FORM TO RESTRICT ACTIVE DEACTIVE FUNCTIONALITY 
+    	     OF PRODUCT WHICH DONT HAVE PRODUCT VARIANT-->
+    	<record id="product_variant_inherit_view_id" model="ir.ui.view">
+            <field name="name">product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='active']" position="replace">
+            		<field name="is_having_attribute" invisible="1"/>
+            		<field name="active" attrs="{'readonly':[('is_having_attribute','=',True)]}"/>
+            	</xpath>
+				
+            </field>
+        </record>  
+  </data>
+</openerp>
