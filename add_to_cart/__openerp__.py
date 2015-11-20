@@ -15,7 +15,9 @@ OpenERP E-Commerce
 	                    'views/add_to_cart_template_view.xml',
     		          ],
 
-    	'images': ['static/description/add2cart_prod_kanban_view.png'],	          
+    	'images': ['static/description/add2cart_prod_kanban_view.png'],	 
+	'price': 20,
+        'currency': 'EUR',         
     	'installable': True,
     	'application': True,
 }
