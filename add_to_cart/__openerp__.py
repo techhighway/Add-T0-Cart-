@@ -15,7 +15,7 @@ OpenERP E-Commerce
 	                    'views/add_to_cart_template_view.xml',
     		          ],
 
-    	'images': ['static/description/icon.png'],	          
+    	'images': ['static/description/add2cart_prod_kanban_view.png'],	          
     	'installable': True,
     	'application': True,
 }
