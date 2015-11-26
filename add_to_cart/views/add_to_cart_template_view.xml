@@ -13,11 +13,12 @@
 	  </xpath>
 	</template>
 	
+	
 	<!-- PRODUCT VIEW ON SHOP FORM AND SHOP-CART FORM-->
 	
 	<template id="products_item_inherited" inherit_id="website_sale.products_item" active="True" customize_show="True" name="Add to Cart with Ease"> 
 		<xpath expr="//form[@action='/shop/cart/update']" method="post" position="replace"> 
-			 <form action="/shop/cart/update_no_redirect" method="post" style="display: inline-block;"> 
+			 <form action="/shop/cart/update_no_redirect" method="get" style="display: inline-block;"> 
 				  <div itemscope="itemscope" itemtype="http://schema.org/Product">
 					  <div class="ribbon-wrapper">
 					    <div class="ribbon btn btn-danger">Offer</div>
@@ -32,7 +33,6 @@
 					      <h5><strong><a itemprop="name" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']>1 else None))" t-field="product.name"/></strong></h5>
 					      <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price" t-if="product.product_variant_ids">
 					      	  	<input name="product_id" t-att-value="product.product_variant_ids[0].id" type="hidden"/>
-					      	  	<t t-esc="product_id"/>
 			    			 
 								<div name="prod_qty_value_and_buttons">
 									<t t-set="website_sale_order" t-value="website.sale_get_order()"/>
@@ -151,24 +151,6 @@
 		</xpath>
 	</template>
 
-	<!--  
-	<div class="css_quantity input-group oe_website_spinner" style="float: left;">
-    	<span class="input-group-addon">
-            <a t-attf-href="#" class="mb8 js_add_cart_json_inherited">
-                <i class="fa fa-minus"></i>
-            </a>
-    	</span>
-    	<input type="text" class="js_quantity form-control" data-min="1" id="cart_quantity_txt_box" name="add_qty" value="1" maxlength="2"
-    			onkeydown='allow_numeric_input(event)'/>
-    	<span class="input-group-addon">
-            <a t-attf-href="#" class="mb8 float_left js_add_cart_json_inherited">
-                <i class="fa fa-plus"></i>
-            </a>
-    	</span>
-    </div>
-	<t t-esc="int_prod_qty"/> 
-	-->
-
 
 	<!-- ADD-TO-MY-CART VIEW ON SHOP-FORM -->
 
@@ -197,12 +179,6 @@
 	                        	<t t-set="int_prod_qty" t-value="website.is_product_in_cart(line.product_id.id)"/>
 	                          <tr class="cart_table_color">
 	                              <td colspan="2" t-if="not line.product_id.product_tmpl_id"></td>
-	                             <!--
-	                             	<td align="center" t-if="line.product_id.product_tmpl_id">
-	                                  <span t-field="line.product_id.image_small"
-	                                        t-field-options='{"widget": "image", "class": "img-rounded"}'/>
-	                              </td>
-	                              -->
 	                              <td t-if="line.product_id.product_tmpl_id">
 	                                  <div>
 	                                      <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
@@ -236,7 +212,6 @@
 		                                          t-att-data-product-id="line.product_id.id"
 		                                          t-att-value="int(line.product_uom_qty)"
 		                                      	  maxlength="2" readonly="1" onkeydown='allow_numeric_input(event)'/> 
-	                                      <!--<script type="text/javascript" src="/add_to_cart/static/src/js/qty_add.js"/>-->
 	                                      <span class="input-group-addon">
 	                                          <a t-attf-href="#" class="mb8 float_left js_add_cart_json_inherited" data-no-instant="">
 	                                              <i class="fa fa-plus"></i>
