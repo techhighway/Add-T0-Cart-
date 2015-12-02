@@ -88,7 +88,7 @@
 
 	<!-- MY-CART VIEW ON CART LIST -->
 	
-	<template id="cart_inherited" inherit_id="website_sale.cart" active="True" customize_show="True" name="Cart (Inherited)"> 
+	<template id="cart_inherited" inherit_id="website_sale.cart_lines" active="True" customize_show="True" name="Cart (Inherited)"> 
 		<xpath expr="//div[@class='input-group oe_website_spinner']" position="replace">
         	<div class="input-group oe_website_spinner"> 
             	<span class="input-group-addon">
