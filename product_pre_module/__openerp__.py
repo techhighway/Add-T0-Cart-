@@ -1,7 +1,7 @@
 {
     'name': 'Disable Product Variant Activation Checkbox',
     'category': 'website',
-    'summary': 'This module deactive, active field on product variant form for product which does not have product variant',
+    'summary': 'This Module disable the product activation check box from the product variant form.',
     'website': 'https://www.techhighway.co.in',
     'version': '1.0',
     'description': """
