@@ -1,5 +1,5 @@
 {
-    'name': 'Add To Cart(Base Module)',
+    'name': 'Disable Product Variant Activation Checkbox',
     'category': 'website',
     'summary': 'This module deactive, active field on product variant form for product which does not have product variant',
     'website': 'https://www.techhighway.co.in',
