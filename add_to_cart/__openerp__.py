@@ -10,7 +10,7 @@ OpenERP E-Commerce
 
         """,
     	'author'	: 'TechHighway Systems Pvt. Ltd.',
-        'depends'	: [ 'product_pre_module' ],
+        'depends'	: [ 'website', 'sale','website_sale', 'payment' ],
     	'data'	    : [
 	                    'views/add_to_cart_template_view.xml',
     		          ],
